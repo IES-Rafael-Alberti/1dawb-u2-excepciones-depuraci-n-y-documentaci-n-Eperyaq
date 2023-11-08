@@ -33,6 +33,8 @@ def pedirEdad(msj: str):
 
     print (mostrarSerie(edad))
 """
+from ejercicio_2_3_4 import clean_terminal
+
 def pedirEdad(msj: str):
 
     entrada = input(msj)
@@ -52,6 +54,7 @@ def mostrarSerie(edad: int) -> str:
 
 
 def main():
+    clean_terminal()
     error = True
     while error:
         try:

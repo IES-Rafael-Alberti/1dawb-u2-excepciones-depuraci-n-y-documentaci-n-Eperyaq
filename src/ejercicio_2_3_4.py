@@ -33,6 +33,7 @@ def pedirNumero ():
 
 def main():
     
+    clean_terminal()
     print(pedirNumero())
 
 
