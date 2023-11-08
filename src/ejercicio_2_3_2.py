@@ -12,12 +12,39 @@ def pedir ():
     returns:
         int: a number
     """
-    numero = int(input(("Dime un numero entero positivo porfavor: ")))
 
-    while numero <= 0:
-        raise Exception("no seas asi, pon el numero bien")
-        num = int(input("prueba de nuevo"))
+    """
+    error = True
+    while error:
+        try:
+            
+            numero = int(input(("Dime un numero entero positivo porfavor: ")))
+            if numero <= 0:
+                raise Exception("Error, no seas asi, pon el numero bien")
+            #el raise es un error que nosotros queremos que pase si o si, normalmente que te den un numero negativo no pasa nada pero como nostros queremos que de el problema ponemos  el raise,para que salte si o si
         
+            error = False
+        
+        except ValueError:
+            print("Error, número no válido")
+        except Exception as e:
+            print(e)
+    """
+
+    error = True
+    while error:
+        try:
+            
+            numero = int(input(("Dime un numero entero positivo porfavor: ")))
+            if numero <= 0:
+                raise ValueError("no seas asi, pon el numero bien")
+            
+        
+            error = False
+        
+        except ValueError as e:
+            print("Error, " + str(e))
+
     
     return numero
 

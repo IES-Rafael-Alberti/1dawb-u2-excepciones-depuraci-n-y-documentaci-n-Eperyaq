@@ -1,5 +1,5 @@
 import pytest
-from src.actividad01 import dividir
+from src.ejercicio_2_3_2 import pedir
 
 @pytest.mark.parametrize(
     "input_dividendo, input_divisor, expected",
@@ -12,10 +12,12 @@ from src.actividad01 import dividir
         (-88.35, 12.88, -6.86)
     ]
 )
-def test_dividir_params(input_dividendo, input_divisor, expected):
-    assert dividir(input_dividendo, input_divisor) == expected
+def test_pedir_params(input_1, input_divisor, expected):
+    assert pedir(input_1, input_divisor) == expected
 
 
+"""
 def test_dividir_ZeroDivisionError():
     with pytest.raises(ZeroDivisionError):
         dividir(1200.456, 0)
+"""
