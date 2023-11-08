@@ -16,10 +16,12 @@ def pedirNumero():
 
 def hacerSerie(num : int):
     
-    contador=0
-    while contador != num:
+    contador= 0
+    while contador <= num:
+        print (num, end="")
         num = num -1
-        contador+= contador
+        if num != contador -1:
+            print(",", end="")
         
     return num
 
@@ -28,9 +30,9 @@ def hacerSerie(num : int):
 def main():
     
     clean_terminal()
-    pedirNumero()
-    numerito = hacerSerie(numerito)
-    print(numerito)
+    numerito = pedirNumero()
+    hacerSerie(numerito)
+    
 
 
 if __name__ == "__main__":
