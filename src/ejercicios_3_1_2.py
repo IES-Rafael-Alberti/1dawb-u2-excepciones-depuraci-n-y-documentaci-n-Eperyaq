@@ -20,7 +20,7 @@ def nombreAsignaturas():
 
 
 def llamarAsignaturas(asignaturas):
-    """Str who calls the list and make a sentence
+    """Str who calls the list and make a custom sentence
     
     Args:
         asignatura(str): each subjetc of the list asignaturas

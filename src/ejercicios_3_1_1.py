@@ -14,32 +14,23 @@ def pedirAsignaturas():
     
     """
 
-    asignaturas = None
-    while  asignaturas != "" :
-
-        if asignaturas != "":
-            asignaturas = input("Dime que asignatura quieres meter y si no quieres meter nada introduce un espacio vacio: ")
-        
+    asignaturas = []
+    while  len(asignaturas) == 0  or asignatura != "" :
+        asignatura  = input("Dime que asignatura quieres meter y si no quieres meter nada introduce un espacio vacio: ")
+        if asignatura != "":
+            asignaturas.append(asignatura) 
 
     return asignaturas
 
-def meterAsignaturas(asignaturas):
-    """Introduce the subjects into a list but its not working :D
-    
-    """
-    
-    listaAsignaturas = []
-    listaAsignaturas.append(asignaturas)
-    
-    return listaAsignaturas
 
 def main():
 
     #clean_terminal()
 
-    asignaturas =pedirAsignaturas()
+    asignaturas = pedirAsignaturas()
 
-    print(meterAsignaturas(asignaturas))
+    print(asignaturas)
+    #hacer una funcion de mostrar lista 
 
 
 if __name__ == "__main__":

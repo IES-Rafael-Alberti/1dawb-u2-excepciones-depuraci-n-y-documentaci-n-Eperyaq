@@ -1,7 +1,7 @@
 """
 Escribir un programa que pida al usuario un número entero positivo y muestre por pantalla la cuenta atrás desde ese número hasta cero separados por comas. Deberá solicitar el número hasta introducir uno correcto.
 """
-from ejercicio_2_3_4 import clean_terminal
+from src.ejercicio_2_3_4 import clean_terminal
 
 def pedirNumero():
     numero = None
@@ -15,15 +15,20 @@ def pedirNumero():
     return numero
 
 def hacerSerie(num : int):
-    
+    cualquier = ""
     contador= 0
     while contador <= num:
-        print (num, end="")
-        num = num -1
-        if num != contador -1:
-            print(",", end="")
         
-    return num
+        
+        if num == contador :
+            cualquier = cualquier + str(num) 
+        elif num != contador -1:
+            cualquier = cualquier + str(num) + ","
+        num -= 1
+        
+
+        
+    return cualquier
 
 
 
@@ -31,7 +36,7 @@ def main():
     
     clean_terminal()
     numerito = pedirNumero()
-    hacerSerie(numerito)
+    print(hacerSerie(numerito))
     
 
 
