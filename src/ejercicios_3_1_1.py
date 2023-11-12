@@ -15,24 +15,40 @@ def pedirAsignaturas():
     """
 
     asignaturas = []
-    while  len(asignaturas) == 0  or asignatura != "" :
-        asignatura  = input("Dime que asignatura quieres meter y si no quieres meter nada introduce un espacio vacio: ")
-        if asignatura != "":
-            asignaturas.append(asignatura) 
-
+    try:
+        while  len(asignaturas) == 0  or asignatura != "" :
+            asignatura  = input("Dime que asignatura quieres meter y si no quieres meter nada introduce un espacio vacio: ")
+            
+            if asignatura != "":
+                asignaturas.append(asignatura) 
+            
+            
+    except ValueError:
+        print("Un numero en el nombre de las asignaturas??")
+    except Exception:
+        print("Ya la liaste")
     return asignaturas
+
+
+def conclusion(asignaturas):
+    
+    for perro in asignaturas:
+        print(f"Mis asignaturas finales son: {perro}")
+        
+    return perro
 
 
 def main():
 
-    #clean_terminal()
+    clean_terminal()
 
     asignaturas = pedirAsignaturas()
-
-    print(asignaturas)
-    #hacer una funcion de mostrar lista 
+    
+    conclusion(asignaturas)
+    
+    
 
 
 if __name__ == "__main__":
     main()
-#no comprendo porque al devolver asignaturas me las devuelve como literal ['']
+#Como puedo hacer para, si asignaturas == a un numero raise ValueError

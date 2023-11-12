@@ -15,9 +15,19 @@ def preguntarNota(asignaturas):
     notas = []
 
     for asignatura in asignaturas:
-
-        nota = input(f"Que nota has sacado en {asignatura}?: ")
-        notas.append(nota)
+        try:
+            nota = int(input(f"Que nota has sacado en {asignatura}?: "))
+            notas.append(nota)
+            
+            if nota<0 or nota>10:
+                raise Exception(print("ERROR, solo numeros correctos."))
+            
+        except ValueError:
+            print("ERROR")
+        except Exception as e:
+            print(e)
+        
+        
         
     
     return notas
@@ -34,10 +44,12 @@ def resolucionNotas(nota: list, asignaturas: str):
     
     nombre = input("Dime tu nombre: ")
     
-    
-    for i in range(0, len(asignaturas)):
-        
-        print(f"{nombre} en {asignaturas[i]} ha sacado un {nota[i]}")
+    try:
+        for i in range(0, len(asignaturas)):
+            
+            print(f"{nombre} en {asignaturas[i]} ha sacado un {nota[i]}")
+    except IndexError:
+        print("La has liado, por eso no te sale la lista completa")
 
         
     return asignaturas
@@ -55,7 +67,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-#me falla lo mismo que en el primero, meter los input en la lista
+#me salta el error pero aun así guarda el valor
 
 """
 pos = 0
