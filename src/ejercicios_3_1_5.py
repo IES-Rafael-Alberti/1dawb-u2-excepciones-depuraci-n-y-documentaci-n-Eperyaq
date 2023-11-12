@@ -13,7 +13,7 @@ def lista():
 def main():
 
     clean_terminal()
-    print(lista())
+    print(lista()[::-1])
 
 
 if __name__ == "__main__":
