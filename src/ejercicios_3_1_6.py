@@ -6,9 +6,10 @@ from ejercicio_2_3_4 import clean_terminal
 from ejercicios_3_1_3 import preguntarNota
 
 def controlarAsignaturas(asignatura, notas):
-    if "1""2""3""4" in notas:
-        asignatura.remove()
-    return notas
+    for perro in asignatura:
+        if perro < 5:
+            print(f"has sacado un {notas}.")
+    return perro
 
 
 

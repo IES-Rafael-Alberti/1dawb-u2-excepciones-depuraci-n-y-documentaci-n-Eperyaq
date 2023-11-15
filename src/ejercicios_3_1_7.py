@@ -10,13 +10,15 @@ def definirLista():
 
 
 def calculoLista(abecedario: list):
-    abecedario_cambiado = []
-    for i in range (len(abecedario)):
-        if i % 3 == 0:
-            abecedario_cambiado.append(i)
-            
-    
-    return abecedario_cambiado
+    cont = 0
+    max = len(abecedario) - 1
+    while cont <= max:
+        if cont % 3 == 0:
+            abecedario.pop(cont)
+            max -= 1
+        cont += 1
+             
+    return abecedario
 
 
 
